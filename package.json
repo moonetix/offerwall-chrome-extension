@@ -1,0 +1,16 @@
+{
+  "name": "offerwall-chrome-extension",
+  "version": "1.0.0",
+  "description": "Manifest V3 extension with a Moonetix offerwall: server-signed link, new tab, balance from your API.",
+  "private": true,
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "start": "npm --prefix server start",
+    "test": "npm --prefix server test",
+    "test:e2e": "node --disable-warning=ExperimentalWarning test/e2e.mjs",
+    "zip": "cd extension && zip -r ../earn-points-extension.zip . -x '.*'"
+  }
+}
