@@ -10,7 +10,7 @@
 [![No remote code](https://img.shields.io/badge/remote%20code-none-brightgreen)](https://moonetix.com/industries/browser-extensions)
 [![Zero dependencies](https://img.shields.io/badge/dependencies-zero-brightgreen)](https://moonetix.com/academy/monetization/monetize-browser-extension)
 
-A Chrome extension in `extension/` and a small Node.js server in `server/` for the [Moonetix](https://moonetix.com) offerwall. Moonetix is a pay-per-result affiliate network: your users earn your own points by completing offers, and you earn per completed offer. The extension holds no key, ships no remote code, and only reads the balance back from your API.
+A Chrome extension in `extension/` and a small Node.js server in `server/` for the [Moonetix](https://moonetix.com) offerwall. Moonetix is an affiliate network: your users earn your own points by completing offers, and you earn per completed offer. The extension holds no key, ships no remote code, and only reads the balance back from your API.
 
 > **Get your App ID and keys: sign up free at https://moonetix.com/register?from=github-offerwall-chrome-extension**
 
