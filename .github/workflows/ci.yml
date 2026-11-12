@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm test
+      - name: Download Chrome for Testing (stable)
+        run: |
+          url=$(curl -fsS https://googlechromelabs.github.io/chrome-for-testing/last-known-good-versions-with-downloads.json \
+            | node -e 'let s="";process.stdin.on("data",d=>s+=d).on("end",()=>{const d=JSON.parse(s).channels.Stable.downloads.chrome;console.log(d.find(x=>x.platform==="linux64").url)})')
+          curl -fsSL -o "$RUNNER_TEMP/chrome.zip" "$url"
+          unzip -q "$RUNNER_TEMP/chrome.zip" -d "$RUNNER_TEMP"
+          echo "CHROME_PATH=$RUNNER_TEMP/chrome-linux64/chrome" >> "$GITHUB_ENV"
+      - run: npm run test:e2e
