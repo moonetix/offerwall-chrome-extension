@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Earn Points Example</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <h1>Earn Points Example</h1>
+  <p class="muted">Your extension's own features go here. They work without an account.</p>
+
+  <section id="earn-section" hidden>
+    <h2>Rewards</h2>
+    <p id="balance" class="balance"></p>
+
+    <form id="signin" hidden>
+      <label>Email <input name="email" type="email" autocomplete="email" required></label>
+      <label>Password <input name="password" type="password" autocomplete="current-password" minlength="8" required></label>
+      <label id="age-row" class="check" hidden><input name="over16" type="checkbox"> I am 16 or older</label>
+      <button type="submit" id="submit">Sign in</button>
+      <button type="button" id="switch" class="link">Create an account</button>
+    </form>
+
+    <button id="earn" hidden>Earn points</button>
+    <p id="note" class="muted">Rewards come from third-party offers by Moonetix and open in a new tab. 16+ only. Some rewards arrive after a review.</p>
+    <p class="row"><button type="button" id="signout" class="link" hidden>Sign out</button> <a href="options.html" target="_blank">Settings</a></p>
+  </section>
+
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "Earn Points Example",
+  "version": "1.0.0",
+  "description": "Example extension with an optional Earn section. Rewards come from third-party offers and open in a new tab.",
+  "action": {
+    "default_title": "Earn Points Example",
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html",
+  "permissions": ["storage"],
+  "host_permissions": ["http://localhost:3000/*"]
+}
